@@ -1,7 +1,7 @@
 // speeddetector.js
 const prompt = require("prompt-sync")({sigint: true});
 
-const speed = prompt("Enter the speed of the car: ");
+const speed = prompt("insert speed of the car: ");
 const speedLimit = 70;
 // console.log(speedDetector(speed));
  function speedDetector() {
