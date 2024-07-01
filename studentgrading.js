@@ -1,37 +1,24 @@
-const r1 = require("readline").createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
+// studentgrade.js
+const prompt = require("prompt-sync")({sigint: true});
+const mark= prompt("Enter the mark of the student: ");
 
-
-// averasge grade of students
-function calculateGrade(marks) {
-        if (marks > 100 || marks < 0){
-            return 'invalid'
-        }
-        if (marks > 79) {
-            return 'A';
-        } else if (marks >= 60 && marks <=79) {
-            return 'B';
-        } else if (marks >= 50 && marks <=59) {
-            return 'C';
-        } else if (marks >= 40 && marks <=49) {
-            return 'D';
-        } else {
-            return 'E';
-        }
+function studentMark(mark) {
+// check if mark is between 0 and 100
+    if (mark > 79 && mark <= 100) {
+      return "A";
+    } else if (mark >= 60 && mark <= 79) {
+      return "B";
+    } else if (mark >= 50 && mark <= 59) {
+      return "C";
+    } else if (mark >= 40 && mark <= 49) {
+      return "D";
+    } else if (mark >= 0 && mark <= 39) {
+      return "E";
+    } else {
+      return "Invalid input: Mark should be between 0 and 100";// Invalid input
     }
+  }
 
-    r1.question("Enter student marks: ", function (input) {
-        const mark = Number(input);
-      
-        if (isNaN(mark) || mark > 100 || mark < 0) {
-          console.log("The marks you entered is not correct");
-        } else {
-          let grade = awardGrades(mark);
-          console.log("The grade is " + grade);
-        }
-      
-        r1.close();
-      });
-      
+  console.log(studentMark
+    (mark)
+  )
